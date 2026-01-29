@@ -1,0 +1,8 @@
+# ignore build output
+**/bin/
+**/obj/
+
+# ignore git + ide
+.git
+.vs
+.vscode

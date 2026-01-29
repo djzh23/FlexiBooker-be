@@ -1,0 +1,30 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: backend/FlexiBooker.Api/Dockerfile
+    container_name: flexibooker-api
+    volumes:
+      - ./backend:/app/backend
+    ports:
+      - "5081:8080"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__Default: "Host=db;Port=5432;Database=flexibooker;Username=postgres;Password=postgres"
+    depends_on:
+      - db
+
+  db:
+    image: postgres:16
+    container_name: flexibooker-db
+    environment:
+      POSTGRES_DB: flexibooker
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - flexibooker_pg:/var/lib/postgresql/data
+
+volumes:
+  flexibooker_pg:

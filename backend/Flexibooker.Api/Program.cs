@@ -11,12 +11,13 @@ using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Configuration.AddEnvironmentVariables();
 
 builder.Services.AddControllers();
 
 builder.Services.AddDbContext<FlexiBookerDbContext>(options =>
 {
-    var cs = builder.Configuration.GetConnectionString("DefaultConnection");
+    var cs = builder.Configuration.GetConnectionString("Default");
     options.UseNpgsql(cs);
 });
 
