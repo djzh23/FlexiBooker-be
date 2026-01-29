@@ -58,6 +58,8 @@ using (var scope = app.Services.CreateScope())
     var db = scope.ServiceProvider.GetRequiredService<FlexiBookerDbContext>();
     await db.Database.MigrateAsync();
     await TenantSeeder.SeedAsync(db);
+    await MenuSeeder.SeedAsync(db);
+
 }
 
 // HTTP Pipeline configuration
