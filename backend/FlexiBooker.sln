@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.31903.59
+# Visual Studio Version 18
+VisualStudioVersion = 18.1.11312.151 d18.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlexiBooker.Api", "FlexiBooker.Api\FlexiBooker.Api.csproj", "{E1258297-7A3D-4006-8CD6-0A5D225FCB4D}"
 EndProject
@@ -10,6 +10,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlexiBooker.Application", "FlexiBooker.Application\FlexiBooker.Application.csproj", "{917BD85F-5E69-4572-8EA7-96A488A03BC1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlexiBooker.Infrastructure", "FlexiBooker.Infrastructure\FlexiBooker.Infrastructure.csproj", "{B8ED52BB-5DBC-47BA-9530-88C9A34C5024}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1AB2CDF9-3FDD-498F-9320-FD56A1DE4E2E}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -72,5 +77,14 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E1258297-7A3D-4006-8CD6-0A5D225FCB4D} = {1AB2CDF9-3FDD-498F-9320-FD56A1DE4E2E}
+		{D6764EC4-9F0E-4510-8EC0-D3CA4045C342} = {1AB2CDF9-3FDD-498F-9320-FD56A1DE4E2E}
+		{917BD85F-5E69-4572-8EA7-96A488A03BC1} = {1AB2CDF9-3FDD-498F-9320-FD56A1DE4E2E}
+		{B8ED52BB-5DBC-47BA-9530-88C9A34C5024} = {1AB2CDF9-3FDD-498F-9320-FD56A1DE4E2E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {225F2F66-CB90-470E-8CB5-46EC61D5611E}
 	EndGlobalSection
 EndGlobal
