@@ -1,0 +1,6 @@
+@Flexibooker.Api_HostAddress = http://localhost:5081
+
+GET {{Flexibooker.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
