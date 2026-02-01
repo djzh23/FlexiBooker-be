@@ -1,0 +1,168 @@
+{
+  "common": {
+    "appName": "FlexiBooker",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "close": "Close",
+    "search": "Search",
+    "noResults": "No results found",
+    "required": "This field is required",
+    "language": "Language",
+    "english": "English",
+    "french": "Français",
+    "darija": "Darija"
+  },
+  "nav": {
+    "menu": "Menu",
+    "about": "About",
+    "contact": "Contact",
+    "admin": "Admin Panel",
+    "home": "Home"
+  },
+  "hero": {
+    "welcome": "Welcome to {{restaurantName}}",
+    "description": "Discover our delicious menu",
+    "cta": "Browse Menu"
+  },
+  "menu": {
+    "title": "Our Menu",
+    "categories": "Categories",
+    "dishes": "Dishes",
+    "price": "Price",
+    "description": "Description",
+    "available": "Available",
+    "unavailable": "Unavailable",
+    "addToCart": "Add to Cart",
+    "quantity": "Quantity",
+    "total": "Total"
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "restaurant": "Restaurant",
+    "password": "Password",
+    "login": "Login",
+    "logout": "Logout",
+    "wrongPassword": "Wrong password",
+    "enterPassword": "Enter admin password",
+    "tabs": {
+      "dishes": "Dishes",
+      "hero": "Hero Text",
+      "colors": "Colors",
+      "layout": "Layout",
+      "heroImage": "Hero Image",
+      "typography": "Typography"
+    },
+    "dishes": {
+      "title": "Manage Dishes",
+      "addNew": "Add New Dish",
+      "edit": "Edit Dish",
+      "delete": "Delete Dish",
+      "deleteConfirm": "Are you sure you want to delete this dish?",
+      "name": "Dish Name",
+      "price": "Price",
+      "description": "Description",
+      "image": "Image URL",
+      "category": "Category",
+      "available": "Available",
+      "selectCategory": "Select Category",
+      "formTitle": "Dish Information",
+      "noDescription": "No description",
+      "deletedSuccess": "Dish deleted successfully!",
+      "savedSuccess": "Dish saved successfully!",
+      "addedSuccess": "Dish added!",
+      "editedSuccess": "Dish edited!",
+      "error": "Error saving dish",
+      "requiredFields": "Please fill in name, price and category"
+    },
+    "hero": {
+      "title": "Hero Section",
+      "subtitle": "Customize your welcome message",
+      "badgeLabel": "Restaurant Name / Badge",
+      "titleLabel": "Title",
+      "descriptionLabel": "Description",
+      "previewBadge": "Your restaurant name...",
+      "previewTitle": "Your title here...",
+      "previewDescription": "Your description here...",
+      "savedSuccess": "Hero section saved!",
+      "chars": "characters"
+    },
+    "colors": {
+      "title": "Design Colors",
+      "subtitle": "Customize your brand colors",
+      "primary": "Primary Color (Header, Buttons)",
+      "accent": "Accent Color (Highlights)",
+      "preview": "Preview",
+      "buttonPrimary": "Button with Primary Color",
+      "buttonAccent": "Button with Accent Color",
+      "headerPreview": "Header Preview",
+      "savedSuccess": "Colors saved!"
+    },
+    "layout": {
+      "title": "Page Layout",
+      "description": "Enable or disable sections on your landing page",
+      "showHero": "Show Hero Banner",
+      "heroDescription": "Display the main banner with your restaurant image",
+      "showMenu": "Show Menu Section",
+      "menuDescription": "Display your dishes in organized categories",
+      "showSteps": "Show Steps Section",
+      "stepsDescription": "Display the customization workflow",
+      "showGallery": "Show Gallery",
+      "galleryDescription": "Display photos of your restaurant/dishes",
+      "savedSuccess": "Layout saved!"
+    },
+    "heroImage": {
+      "title": "Hero Image",
+      "imageUrl": "Image URL",
+      "urlDescription": "Enter a valid image URL (HTTPS recommended)",
+      "required": "Please enter an image URL",
+      "savedSuccess": "Hero image updated!"
+    },
+    "typography": {
+      "title": "Typography & Fonts",
+      "bodyFont": "Body Font Family",
+      "headingFont": "Heading Font Family",
+      "bodySize": "Body Text Size",
+      "headingSize": "Heading Size",
+      "bodyExample": "This is your body text. It will use the selected font family and size.",
+      "headingExample": "Your Heading Here",
+      "savedSuccess": "Typography saved!"
+    }
+  },
+  "layout": {
+    "hero": {
+      "badge": "Featured",
+      "title": "Welcome",
+      "description": "Discover our delicious offerings",
+      "cta1": "Order Now",
+      "cta2": "View Full Menu",
+      "stats_label": "{{value}} {{label}}"
+    },
+    "menu": {
+      "badge": "Our Menu",
+      "title": "Popular Dishes",
+      "description": "Handcrafted recipes made with the finest ingredients"
+    },
+    "steps": {
+      "badge": "How It Works",
+      "title": "Your Customization Journey"
+    },
+    "gallery": {
+      "badge": "Gallery",
+      "title": "Visual Delights"
+    }
+  },
+  "messages": {
+    "loading": "Loading menu...",
+    "networkError": "Network error. Please try again later.",
+    "backendError": "Backend error. Please try again.",
+    "notFound": "Restaurant not found",
+    "tryAgain": "Try Again",
+    "contactSupport": "Contact Support"
+  }
+}

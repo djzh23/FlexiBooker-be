@@ -1,0 +1,149 @@
+.admin-gate-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.admin-gate-card {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  width: 90%;
+  animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.admin-gate-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.admin-gate-header h1 {
+  margin: 0 0 10px 0;
+  font-size: 28px;
+  color: #333;
+}
+
+.admin-gate-header p {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.admin-gate-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.admin-gate-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-gate-form label {
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+.admin-gate-form input {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: monospace;
+  transition: all 0.2s ease;
+}
+
+.admin-gate-form input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 12px;
+  margin-top: 6px;
+  padding: 8px 10px;
+  background: #ffe6e6;
+  border-radius: 4px;
+  border-left: 3px solid #e74c3c;
+}
+
+.btn-unlock {
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.btn-unlock:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.btn-unlock:active {
+  transform: translateY(0);
+}
+
+.admin-gate-info {
+  margin-top: 20px;
+  padding: 12px 15px;
+  background: #f0f7ff;
+  border-radius: 6px;
+  border-left: 3px solid #667eea;
+  font-size: 12px;
+  color: #555;
+}
+
+.admin-gate-info p {
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .admin-gate-card {
+    padding: 30px 20px;
+  }
+
+  .admin-gate-header h1 {
+    font-size: 24px;
+  }
+}

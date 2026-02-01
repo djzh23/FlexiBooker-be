@@ -1,0 +1,5 @@
+example-resto:
+create example-resto.json in tenant-config.json
+
+then this curl 
+curl.exe -X POST "http://localhost:5081/api/v1/admin/sites" -H "X-Admin-Key: dev-admin-key" -H "Content-Type: application/json" -d @blublu-pizza-config.json

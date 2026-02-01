@@ -1,0 +1,78 @@
+{
+  "brand": {
+    "primaryColor": "#8B6F47",
+    "secondaryColor": "#D4AF37",
+    "accentColor": "#2D2D2D",
+    "logoUrl": null
+  },
+  "contact": {
+    "phone": "+212 6 56 78 90 12",
+    "whatsapp": "+212 6 56 78 90 12",
+    "email": "contact@burgermaster.com"
+  },
+  "layout": {
+    "showSampleShowcase": true,
+    "hero": {
+      "enabled": true,
+      "badge": "BurgerMaster | Marrakech",
+      "title": "Handmade #Premium Burgers",
+      "description": "100% natürliche Zutaten, lokal bezogen. Jeder Burger wird frisch zubereitet.",
+      "cta1": { "label": "Burger bestellen" },
+      "cta2": { "label": "Menü sehen" },
+      "stats": [
+        { "label": "Burger Rezepte", "value": "20+" },
+        { "label": "Sauce-Sorten", "value": "12" },
+        { "label": "Lieferung", "value": "30min" }
+      ],
+      "backgroundImage": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1600&q=80"
+    },
+    "menuSection": {
+      "enabled": true,
+      "badge": "Signature",
+      "title": "Die beliebtesten Burgers",
+      "description": "Handgemachte Premium-Burger mit besten Zutaten."
+    },
+    "steps": {
+      "enabled": true,
+      "badge": "Build Your Burger",
+      "title": "Stelle deinen Burger zusammen",
+      "steps": [
+        {
+          "title": "Schritt 1",
+          "subtitle": "Wähle das Fleisch",
+          "detail": "Beef, Chicken, Vegetarisch, Beyond Meat"
+        },
+        {
+          "title": "Schritt 2",
+          "subtitle": "Wähle das Brot",
+          "detail": "Klassisch, Sesamkern, Vollkorn, Brioche"
+        },
+        {
+          "title": "Schritt 3",
+          "subtitle": "Toppings",
+          "detail": "Käse, Speck, Salat, Tomate, Zwiebeln..."
+        },
+        {
+          "title": "Schritt 4",
+          "subtitle": "Sauce",
+          "detail": "12 verschiedene Sauce-Optionen"
+        },
+        {
+          "title": "Schritt 5",
+          "subtitle": "Extras",
+          "detail": "Pommes, Getränk, Dessert hinzufügen"
+        }
+      ]
+    },
+    "gallery": {
+      "enabled": true,
+      "badge": "Fotos",
+      "title": "Unsere Kreationen",
+      "images": [
+        "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1572802419224-7b1aca76a5fa?auto=format&fit=crop&w=1200&q=80"
+      ]
+    }
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "common": {
+    "appName": "FlexiBooker",
+    "loading": "ڪاتڪ...",
+    "error": "خطا",
+    "success": "نجاح",
+    "cancel": "إلغاء",
+    "save": "حفظ",
+    "delete": "حذف",
+    "edit": "تعديل",
+    "add": "إضافة",
+    "close": "إغلاق",
+    "search": "بحث",
+    "noResults": "لم يتم العثور على نتائج",
+    "required": "هذا الحقل مطلوب",
+    "language": "اللغة",
+    "english": "English",
+    "french": "Français",
+    "darija": "Darija"
+  },
+  "nav": {
+    "menu": "المنيو",
+    "about": "حول",
+    "contact": "اتصل",
+    "admin": "لوحة التحكم",
+    "home": "الرئيسية"
+  },
+  "hero": {
+    "welcome": "أهلا وسهلا بك في {{restaurantName}}",
+    "description": "اكتشف قائمتنا الشهية",
+    "cta": "عرض المنيو"
+  },
+  "menu": {
+    "title": "قائمتنا",
+    "categories": "الفئات",
+    "dishes": "الأطباق",
+    "price": "السعر",
+    "description": "الوصف",
+    "available": "متوفر",
+    "unavailable": "غير متوفر",
+    "addToCart": "أضف للسلة",
+    "quantity": "الكمية",
+    "total": "المجموع"
+  },
+  "admin": {
+    "title": "لوحة التحكم",
+    "restaurant": "المطعم",
+    "password": "كلمة السر",
+    "login": "دخول",
+    "logout": "خروج",
+    "wrongPassword": "كلمة سر خاطئة",
+    "enterPassword": "أدخل كلمة سر المسؤول",
+    "tabs": {
+      "dishes": "الأطباق",
+      "hero": "النص الرئيسي",
+      "colors": "الألوان",
+      "layout": "التخطيط",
+      "heroImage": "صورة البطل",
+      "typography": "الطباعة"
+    },
+    "dishes": {
+      "title": "إدارة الأطباق",
+      "addNew": "إضافة طبق جديد",
+      "edit": "تعديل الطبق",
+      "delete": "حذف الطبق",
+      "deleteConfirm": "هل أنت متأكد من حذف هذا الطبق؟",
+      "name": "اسم الطبق",
+      "price": "السعر",
+      "description": "الوصف",
+      "image": "رابط الصورة",
+      "category": "الفئة",
+      "available": "متوفر",
+      "selectCategory": "اختر الفئة",
+      "formTitle": "معلومات الطبق",
+      "noDescription": "لا توجد وصف",
+      "deletedSuccess": "تم حذف الطبق بنجاح!",
+      "savedSuccess": "تم حفظ الطبق بنجاح!",
+      "addedSuccess": "تم إضافة الطبق!",
+      "editedSuccess": "تم تعديل الطبق!",
+      "error": "خطأ في حفظ الطبق",
+      "requiredFields": "يرجى ملء الاسم والسعر والفئة"
+    },
+    "hero": {
+      "title": "القسم الرئيسي",
+      "subtitle": "قم بتخصيص رسالة الترحيب",
+      "badgeLabel": "اسم المطعم / الشارة",
+      "titleLabel": "العنوان",
+      "descriptionLabel": "الوصف",
+      "previewBadge": "اسم مطعمك...",
+      "previewTitle": "العنوان هنا...",
+      "previewDescription": "الوصف هنا...",
+      "savedSuccess": "تم حفظ القسم الرئيسي!",
+      "chars": "أحرف"
+    },
+    "colors": {
+      "title": "ألوان التصميم",
+      "subtitle": "قم بتخصيص ألوان العلامة التجارية",
+      "primary": "اللون الأساسي (الرأس والأزرار)",
+      "accent": "لون الإبراز",
+      "preview": "معاينة",
+      "buttonPrimary": "زر باللون الأساسي",
+      "buttonAccent": "زر باللون الإبراز",
+      "headerPreview": "معاينة الرأس",
+      "savedSuccess": "تم حفظ الألوان!"
+    },
+    "layout": {
+      "title": "تخطيط الصفحة",
+      "description": "قم بتفعيل أو تعطيل الأقسام على صفحتك الرئيسية",
+      "showHero": "إظهار لافتة البطل",
+      "heroDescription": "عرض اللافتة الرئيسية مع صورة مطعمك",
+      "showMenu": "إظهار قسم القائمة",
+      "menuDescription": "عرض أطباقك في فئات منظمة",
+      "showSteps": "إظهار قسم الخطوات",
+      "stepsDescription": "عرض سير العمل للتخصيص",
+      "showGallery": "إظهار المعرض",
+      "galleryDescription": "عرض صور مطعمك/أطباقك",
+      "savedSuccess": "تم حفظ التخطيط!"
+    },
+    "heroImage": {
+      "title": "صورة البطل",
+      "imageUrl": "رابط الصورة",
+      "urlDescription": "أدخل رابط صورة صحيح (يُنصح بـ HTTPS)",
+      "required": "يرجى إدخال رابط الصورة",
+      "savedSuccess": "تم تحديث صورة البطل!"
+    },
+    "typography": {
+      "title": "الطباعة والخطوط",
+      "bodyFont": "عائلة الخط الأساسي",
+      "headingFont": "عائلة خط العناوين",
+      "bodySize": "حجم نص الجسم",
+      "headingSize": "حجم العناوين",
+      "bodyExample": "هذا هو نص الجسم الخاص بك. سيستخدم عائلة الخط والحجم المحدد.",
+      "headingExample": "العنوان الخاص بك هنا",
+      "savedSuccess": "تم حفظ الطباعة!"
+    }
+  },
+  "layout": {
+    "hero": {
+      "badge": "مميز",
+      "title": "أهلا وسهلا",
+      "description": "اكتشف عروضنا اللذيذة",
+      "cta1": "اطلب الآن",
+      "cta2": "عرض القائمة الكاملة",
+      "stats_label": "{{value}} {{label}}"
+    },
+    "menu": {
+      "badge": "قائمتنا",
+      "title": "الأطباق الشهيرة",
+      "description": "وصفات حرفية مصنوعة من أفضل المكونات"
+    },
+    "steps": {
+      "badge": "كيف يعمل",
+      "title": "رحلة التخصيص الخاصة بك"
+    },
+    "gallery": {
+      "badge": "معرض الصور",
+      "title": "متعة بصرية"
+    }
+  },
+  "messages": {
+    "loading": "جاري تحميل المنيو...",
+    "networkError": "خطأ في الشبكة. يرجى المحاولة لاحقاً.",
+    "backendError": "خطأ في الخادم. يرجى المحاولة مرة أخرى.",
+    "notFound": "المطعم غير موجود",
+    "tryAgain": "حاول مرة أخرى",
+    "contactSupport": "اتصل بالدعم"
+  }
+}

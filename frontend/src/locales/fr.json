@@ -1,0 +1,168 @@
+{
+  "common": {
+    "appName": "FlexiBooker",
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "success": "Succès",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "add": "Ajouter",
+    "close": "Fermer",
+    "search": "Rechercher",
+    "noResults": "Aucun résultat trouvé",
+    "required": "Ce champ est obligatoire",
+    "language": "Langue",
+    "english": "English",
+    "french": "Français",
+    "darija": "Darija"
+  },
+  "nav": {
+    "menu": "Menu",
+    "about": "À propos",
+    "contact": "Contact",
+    "admin": "Panneau Admin",
+    "home": "Accueil"
+  },
+  "hero": {
+    "welcome": "Bienvenue à {{restaurantName}}",
+    "description": "Découvrez notre délicieux menu",
+    "cta": "Parcourir le menu"
+  },
+  "menu": {
+    "title": "Notre Menu",
+    "categories": "Catégories",
+    "dishes": "Plats",
+    "price": "Prix",
+    "description": "Description",
+    "available": "Disponible",
+    "unavailable": "Indisponible",
+    "addToCart": "Ajouter au panier",
+    "quantity": "Quantité",
+    "total": "Total"
+  },
+  "admin": {
+    "title": "Panneau Admin",
+    "restaurant": "Restaurant",
+    "password": "Mot de passe",
+    "login": "Connexion",
+    "logout": "Déconnexion",
+    "wrongPassword": "Mauvais mot de passe",
+    "enterPassword": "Entrez le mot de passe admin",
+    "tabs": {
+      "dishes": "Plats",
+      "hero": "Texte Hero",
+      "colors": "Couleurs",
+      "layout": "Mise en page",
+      "heroImage": "Image Héros",
+      "typography": "Typographie"
+    },
+    "dishes": {
+      "title": "Gérer les plats",
+      "addNew": "Ajouter un nouveau plat",
+      "edit": "Modifier le plat",
+      "delete": "Supprimer le plat",
+      "deleteConfirm": "Êtes-vous sûr de vouloir supprimer ce plat?",
+      "name": "Nom du plat",
+      "price": "Prix",
+      "description": "Description",
+      "image": "URL de l'image",
+      "category": "Catégorie",
+      "available": "Disponible",
+      "selectCategory": "Sélectionner la catégorie",
+      "formTitle": "Informations du plat",
+      "noDescription": "Pas de description",
+      "deletedSuccess": "Plat supprimé avec succès!",
+      "savedSuccess": "Plat enregistré avec succès!",
+      "addedSuccess": "Plat ajouté!",
+      "editedSuccess": "Plat modifié!",
+      "error": "Erreur lors de l'enregistrement du plat",
+      "requiredFields": "Veuillez remplir le nom, le prix et la catégorie"
+    },
+    "hero": {
+      "title": "Section Hero",
+      "subtitle": "Personnalisez votre message de bienvenue",
+      "badgeLabel": "Nom du restaurant / Badge",
+      "titleLabel": "Titre",
+      "descriptionLabel": "Description",
+      "previewBadge": "Votre nom de restaurant...",
+      "previewTitle": "Votre titre ici...",
+      "previewDescription": "Votre description ici...",
+      "savedSuccess": "Section hero enregistrée!",
+      "chars": "caractères"
+    },
+    "colors": {
+      "title": "Couleurs de conception",
+      "subtitle": "Personnalisez vos couleurs de marque",
+      "primary": "Couleur primaire (En-tête, Boutons)",
+      "accent": "Couleur d'accent (Surbrillances)",
+      "preview": "Aperçu",
+      "buttonPrimary": "Bouton avec couleur primaire",
+      "buttonAccent": "Bouton avec couleur d'accent",
+      "headerPreview": "Aperçu du header",
+      "savedSuccess": "Couleurs enregistrées!"
+    },
+    "layout": {
+      "title": "Mise en Page",
+      "description": "Activez ou désactivez les sections de votre page d'accueil",
+      "showHero": "Afficher la bannière héros",
+      "heroDescription": "Afficher la bannière principale avec l'image de votre restaurant",
+      "showMenu": "Afficher la section menu",
+      "menuDescription": "Afficher vos plats dans des catégories organisées",
+      "showSteps": "Afficher la section étapes",
+      "stepsDescription": "Afficher le flux de personnalisation",
+      "showGallery": "Afficher la galerie",
+      "galleryDescription": "Afficher les photos de votre restaurant/plats",
+      "savedSuccess": "Mise en page enregistrée!"
+    },
+    "heroImage": {
+      "title": "Image Héros",
+      "imageUrl": "URL de l'image",
+      "urlDescription": "Entrez une URL d'image valide (HTTPS recommandé)",
+      "required": "Veuillez entrer une URL d'image",
+      "savedSuccess": "Image héros mise à jour!"
+    },
+    "typography": {
+      "title": "Typographie et Polices",
+      "bodyFont": "Famille de polices du corps",
+      "headingFont": "Famille de polices des titres",
+      "bodySize": "Taille du texte du corps",
+      "headingSize": "Taille des titres",
+      "bodyExample": "Ceci est votre texte de corps. Il utilisera la famille de polices et la taille sélectionnées.",
+      "headingExample": "Votre titre ici",
+      "savedSuccess": "Typographie enregistrée!"
+    }
+  },
+  "layout": {
+    "hero": {
+      "badge": "À la une",
+      "title": "Bienvenue",
+      "description": "Découvrez nos délicieuses offres",
+      "cta1": "Commander maintenant",
+      "cta2": "Voir le menu complet",
+      "stats_label": "{{value}} {{label}}"
+    },
+    "menu": {
+      "badge": "Notre Menu",
+      "title": "Plats Populaires",
+      "description": "Recettes artisanales faites avec les meilleurs ingrédients"
+    },
+    "steps": {
+      "badge": "Comment ça marche",
+      "title": "Votre parcours de personnalisation"
+    },
+    "gallery": {
+      "badge": "Galerie",
+      "title": "Délices Visuels"
+    }
+  },
+  "messages": {
+    "loading": "Chargement du menu...",
+    "networkError": "Erreur réseau. Veuillez réessayer plus tard.",
+    "backendError": "Erreur du serveur. Veuillez réessayer.",
+    "notFound": "Restaurant non trouvé",
+    "tryAgain": "Réessayer",
+    "contactSupport": "Contacter le support"
+  }
+}

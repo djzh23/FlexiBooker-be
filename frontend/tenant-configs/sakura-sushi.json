@@ -1,0 +1,68 @@
+{
+  "brand": {
+    "primaryColor": "#0F172A",
+    "secondaryColor": "#F43F5E",
+    "accentColor": "#E5E7EB",
+    "logoUrl": null
+  },
+  "contact": {
+    "phone": "+212 6 55 44 33 22",
+    "whatsapp": "+212 6 55 44 33 22",
+    "email": "info@sakurasushi.ma"
+  },
+  "layout": {
+    "showSampleShowcase": true,
+    "hero": {
+      "enabled": true,
+      "badge": "Sakura Sushi | Marrakesch",
+      "title": "Frisches Sushi. #JapaneseCraft",
+      "description": "Traditionelles Sushi, täglich frisch zubereitet von erfahrenen Sushi-Köchen.",
+      "cta1": { "label": "Sushi bestellen" },
+      "cta2": { "label": "Menü ansehen" },
+      "stats": [
+        { "label": "Rolls", "value": "40+" },
+        { "label": "Sashimi", "value": "15+" },
+        { "label": "Vorbereitungszeit", "value": "30min" }
+      ],
+      "backgroundImage": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=1600&q=80"
+    },
+    "menuSection": {
+      "enabled": true,
+      "badge": "Highlights",
+      "title": "Unsere Sushi-Auswahl",
+      "description": "Maki, Nigiri, Sashimi & Special Rolls."
+    },
+    "steps": {
+      "enabled": true,
+      "badge": "Bestellen",
+      "title": "Sushi leicht gemacht",
+      "steps": [
+        {
+          "title": "Schritt 1",
+          "subtitle": "Box auswählen",
+          "detail": "Single, Mix oder Family Box"
+        },
+        {
+          "title": "Schritt 2",
+          "subtitle": "Extras wählen",
+          "detail": "Wasabi, Ingwer, Sojasauce"
+        },
+        {
+          "title": "Schritt 3",
+          "subtitle": "Lieferung",
+          "detail": "Frisch & gekühlt geliefert"
+        }
+      ]
+    },
+    "gallery": {
+      "enabled": true,
+      "badge": "Galerie",
+      "title": "Sushi Art",
+      "images": [
+        "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?auto=format&fit=crop&w=1200&q=80"
+      ]
+    }
+  }
+}

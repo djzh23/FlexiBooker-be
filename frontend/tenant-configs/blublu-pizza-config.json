@@ -1,0 +1,131 @@
+{
+  "slug": "blublu-pizza",
+  "name": "Blublu Pizza",
+  "timezone": "Europe/Berlin",
+  "currency": "EUR",
+  "config": {
+    "brand": {
+      "primaryColor": "#0066FF",
+      "secondaryColor": "#FFAA00",
+      "accentColor": "#FF0000",
+      "logoUrl": null
+    },
+    "contact": {
+      "phone": "+49 30 999 2000",
+      "whatsapp": "+49 30 999 2000",
+      "email": "hello@blublu-pizza.de"
+    },
+    "layout": {
+      "showSampleShowcase": true,
+      "hero": {
+        "enabled": true,
+        "badge": "Blublu Pizza | Berlin",
+        "title": "Die besten Pizzas in Berlin",
+        "description": "Handgemachte Pizzas mit italienischen Zutaten, zubereitet in unserem Holzofen.",
+        "cta1": { "label": "Jetzt bestellen" },
+        "cta2": { "label": "Menü ansehen" },
+        "stats": [
+          { "label": "Pizzas", "value": "20+" },
+          { "label": "Holzofen", "value": "24h" },
+          { "label": "Lieferzeit", "value": "30min" }
+        ],
+        "backgroundImage": "https://plus.unsplash.com/premium_photo-1769376812336-847642b315a2?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      "menuSection": {
+        "enabled": true,
+        "badge": "Spezialitäten",
+        "title": "Unsere Top Pizzas",
+        "description": "Klassische und moderne Rezepte"
+      },
+      "steps": {
+        "enabled": true,
+        "badge": "Bestellprozess",
+        "title": "Deine Pizza in 3 Schritten",
+        "steps": [
+          { "title": "Schritt 1", "subtitle": "Größe wählen", "detail": "Klein (25cm), Mittel (30cm), Groß (35cm)" },
+          { "title": "Schritt 2", "subtitle": "Pizza wählen", "detail": "Aus 20+ verschiedenen Sorten" },
+          { "title": "Schritt 3", "subtitle": "Bezahlen & Liefern", "detail": "Kontaktlose Lieferung oder Abholen" }
+        ]
+      },
+      "gallery": {
+        "enabled": true,
+        "badge": "Galerie",
+        "title": "Unsere Pizzas",
+        "images": [
+          "https://plus.unsplash.com/premium_photo-1769376812336-847642b315a2?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://plus.unsplash.com/premium_photo-1661762555601-47d088a26b50?q=80&w=1192&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1594007654729-407eedc4be65?q=80&w=728&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ]
+      }
+    }
+  },
+  "categories": [
+    {
+      "name": "Klassische Pizzas",
+      "sortOrder": 1,
+      "items": [
+        {
+          "name": "Margherita",
+          "description": "Tomato, Fresh Mozzarella, Basil, Olive Oil",
+          "price": 9.50,
+          "imageUrl": "https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?auto=format&fit=crop&w=400",
+          "isAvailable": true
+        },
+        {
+          "name": "Pepperoni",
+          "description": "Tomato, Mozzarella, Italian Pepperoni",
+          "price": 11.50,
+          "imageUrl": "https://images.unsplash.com/photo-1612967774789-2a643fc3115d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?auto=format&fit=crop&w=400",
+          "isAvailable": true
+        },
+        {
+          "name": "Quattro Formaggi",
+          "description": "Mozzarella, Parmesan, Gorgonzola, Ricotta",
+          "price": 13.50,
+          "imageUrl": "https://plus.unsplash.com/premium_photo-1722945691819-e58990e7fb27?q=80&w=1021&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?auto=format&fit=crop&w=400",
+          "isAvailable": true
+        }
+      ]
+    },
+    {
+      "name": "Spezial Pizzas",
+      "sortOrder": 2,
+      "items": [
+        {
+          "name": "Vegetariana",
+          "description": "Tomato, Mozzarella, Bell Pepper, Mushroom, Onion, Olives",
+          "price": 11.00,
+          "imageUrl": null,
+          "isAvailable": true
+        },
+        {
+          "name": "Carnivora",
+          "description": "Tomato, Mozzarella, Prosciutto, Bacon, Sausage",
+          "price": 14.50,
+          "imageUrl": null,
+          "isAvailable": true
+        }
+      ]
+    },
+    {
+      "name": "Getränke",
+      "sortOrder": 3,
+      "items": [
+        {
+          "name": "Coca Cola",
+          "description": "Coca Cola 33cl",
+          "price": 2.50,
+          "imageUrl": null,
+          "isAvailable": true
+        },
+        {
+          "name": "Wasser",
+          "description": "Stilles oder sprudelndes Wasser 50cl",
+          "price": 2.00,
+          "imageUrl": null,
+          "isAvailable": true
+        }
+      ]
+    }
+  ]
+}
