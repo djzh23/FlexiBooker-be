@@ -34,7 +34,7 @@ public sealed class FlexiBookerDbContext : DbContext
 
         modelBuilder.Entity<Category>(b =>
         {
-            b.ToTable("categories");
+            b.ToTable("menu_categories");
             b.HasKey(x => x.Id);
 
             b.Property(x => x.TenantId).IsRequired();
@@ -58,6 +58,8 @@ public sealed class FlexiBookerDbContext : DbContext
             b.Property(x => x.Price).HasColumnType("numeric(10,2)").IsRequired();
             b.Property(x => x.ImageUrl).HasMaxLength(500);
             b.Property(x => x.IsAvailable).IsRequired();
+            b.Property(x => x.CreatedAt).IsRequired();
+            b.Property(x => x.UpdatedAt).IsRequired();
 
             b.HasOne(x => x.Category)
                 .WithMany()

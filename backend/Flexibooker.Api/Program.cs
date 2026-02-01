@@ -1,6 +1,9 @@
+using System;
 using Asp.Versioning;
 using Asp.Versioning.ApiExplorer;
 using FlexiBooker.Api.Middleware;
+using FlexiBooker.Api.Options;
+using FlexiBooker.Api.Services;
 using FlexiBooker.Application.Tenancy;
 using FlexiBooker.Infrastructure.Persistence;
 using FlexiBooker.Infrastructure.Seeding;
@@ -14,10 +17,19 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Configuration.AddEnvironmentVariables();
 
 builder.Services.AddControllers();
+builder.Services.Configure<AdminOptions>(builder.Configuration.GetSection("Admin"));
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("Frontend", policy =>
+        policy.AllowAnyOrigin()
+              .AllowAnyHeader()
+              .AllowAnyMethod());
+});
 
 builder.Services.AddDbContext<FlexiBookerDbContext>(options =>
 {
     var cs = builder.Configuration.GetConnectionString("Default");
+    Console.WriteLine($"[Startup] Connection string: {cs}");
     options.UseNpgsql(cs);
 });
 
@@ -46,6 +58,7 @@ builder.Services.ConfigureOptions<ConfigureSwaggerOptions>();
 builder.Services.AddScoped<TenantContext>();
 builder.Services.AddScoped<ITenantContext>(sp => sp.GetRequiredService<TenantContext>());
 builder.Services.AddScoped<TenantResolutionMiddleware>();
+builder.Services.AddScoped<MenuSnapshotBuilder>();
 
 
 
@@ -81,7 +94,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseMiddleware<TenantResolutionMiddleware>();
+app.UseCors("Frontend");
+app.UseWhen(
+    ctx => ctx.Request.Path.StartsWithSegments("/api/v1/public", StringComparison.OrdinalIgnoreCase),
+    branch => branch.UseMiddleware<TenantResolutionMiddleware>());
 app.MapControllers();
 app.Run();
 

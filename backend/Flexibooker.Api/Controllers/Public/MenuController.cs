@@ -1,8 +1,7 @@
 ﻿using FlexiBooker.Api.Contracts.Public;
 using FlexiBooker.Application.Tenancy;
-using FlexiBooker.Infrastructure.Persistence;
+using FlexiBooker.Api.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace FlexiBooker.Api.Controllers.Public;
 
@@ -11,43 +10,18 @@ namespace FlexiBooker.Api.Controllers.Public;
 public sealed class MenuController : ControllerBase
 {
     private readonly ITenantContext _tenant;
-    private readonly FlexiBookerDbContext _db;
+    private readonly MenuSnapshotBuilder _menuSnapshot;
 
-    public MenuController(ITenantContext tenant, FlexiBookerDbContext db)
+    public MenuController(ITenantContext tenant, MenuSnapshotBuilder menuSnapshot)
     {
         _tenant = tenant;
-        _db = db;
+        _menuSnapshot = menuSnapshot;
     }
 
     [HttpGet]
-    public async Task<ActionResult<MenuResponse>> Get()
+    public async Task<ActionResult<MenuResponse>> Get(CancellationToken cancellationToken)
     {
-        var tenantId = _tenant.TenantId;
-
-        var categories = await _db.Categories.AsNoTracking()
-            .Where(c => c.TenantId == tenantId && c.IsActive)
-            .OrderBy(c => c.SortOrder)
-            .ToListAsync();
-
-        var categoryIds = categories.Select(c => c.Id).ToList();
-
-        var items = await _db.MenuItems.AsNoTracking()
-            .Where(i => i.TenantId == tenantId && categoryIds.Contains(i.CategoryId))
-            .OrderBy(i => i.Name)
-            .ToListAsync();
-
-        var itemsByCategory = items.GroupBy(i => i.CategoryId)
-            .ToDictionary(g => g.Key, g => (IReadOnlyList<MenuItemDto>)g
-                .Select(i => new MenuItemDto(i.Id, i.Name, i.Description, i.Price, i.ImageUrl, i.IsAvailable))
-                .ToList());
-
-        var result = categories.Select(c => new MenuCategoryDto(
-            c.Id,
-            c.Name,
-            c.SortOrder,
-            itemsByCategory.TryGetValue(c.Id, out var list) ? list : Array.Empty<MenuItemDto>()
-        )).ToList();
-
-        return Ok(new MenuResponse(result));
+        var categories = await _menuSnapshot.BuildAsync(_tenant.TenantId, cancellationToken);
+        return Ok(new MenuResponse(categories));
     }
 }

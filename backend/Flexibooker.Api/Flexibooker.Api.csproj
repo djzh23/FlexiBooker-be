@@ -10,7 +10,8 @@
     <PackageReference Include="Asp.Versioning.Mvc" Version="8.1.1" />
     <PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" Version="8.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.2">
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; buildtransitive</IncludeAssets>
+      <ExcludeAssets>analyzers</ExcludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
@@ -19,6 +20,7 @@
   <ItemGroup>
     <ProjectReference Include="..\FlexiBooker.Application\FlexiBooker.Application.csproj" />
     <ProjectReference Include="..\FlexiBooker.Infrastructure\FlexiBooker.Infrastructure.csproj" />
+    <ProjectReference Include="..\FlexiBooker.Domain\FlexiBooker.Domain.csproj" />
   </ItemGroup>
 
 </Project>

@@ -3,6 +3,7 @@ using System;
 using FlexiBooker.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace FlexiBooker.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(FlexiBookerDbContext))]
-    partial class FlexiBookerDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260130220621_MenuItemTimestamps")]
+    partial class MenuItemTimestamps
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

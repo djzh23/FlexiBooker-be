@@ -29,9 +29,11 @@ public sealed class TenantResolutionMiddleware : IMiddleware
             return;
         }
 
+        var hostName = context.Request.Host.Host?.ToLowerInvariant();
+
         var tenant = await _db.Tenants
             .AsNoTracking()
-            .FirstOrDefaultAsync(t => t.Slug == slug || t.PrimaryDomain == context.Request.Host.Host.ToLower());
+            .FirstOrDefaultAsync(t => t.Slug == slug || (hostName != null && t.PrimaryDomain == hostName));
 
         if (tenant is null)
         {
@@ -55,7 +57,15 @@ public sealed class TenantResolutionMiddleware : IMiddleware
                 return headerSlug.Trim().ToLowerInvariant();
         }
 
-        // 2) subdomain: {slug}.flexibooker.com
+        // 2) query parameters (?tenant=slug or ?slug=slug)
+        var query = context.Request.Query;
+        if (TryReadQuerySlug(query, "tenant", out var tenantQuerySlug))
+            return tenantQuerySlug;
+
+        if (TryReadQuerySlug(query, "slug", out var slugQuerySlug))
+            return slugQuerySlug;
+
+        // 3) subdomain: {slug}.flexibooker.com
         var host = context.Request.Host.Host; // e.g. marios.flexibooker.local
         var parts = host.Split('.', StringSplitOptions.RemoveEmptyEntries);
 
@@ -63,5 +73,15 @@ public sealed class TenantResolutionMiddleware : IMiddleware
             return parts[0].Trim().ToLowerInvariant();
 
         return null;
+    }
+
+    private static bool TryReadQuerySlug(IQueryCollection query, string key, out string? slug)
+    {
+        slug = null;
+        if (!query.TryGetValue(key, out var values)) return false;
+        var value = values.FirstOrDefault();
+        if (string.IsNullOrWhiteSpace(value)) return false;
+        slug = value.Trim().ToLowerInvariant();
+        return true;
     }
 }
