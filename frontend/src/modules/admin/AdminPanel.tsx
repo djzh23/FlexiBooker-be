@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import type { SiteResponse } from "../tenant/tenant.types";
 import "./AdminPanel.css";
@@ -9,6 +9,33 @@ interface AdminPanelProps {
   onSuccess?: (message: string) => void;
   onError?: (error: string) => void;
 }
+
+type MenuCategory = SiteResponse["categories"][number];
+type MenuItem = MenuCategory["items"][number];
+
+const cloneSiteData = (site?: SiteResponse): SiteResponse | null => {
+  if (!site) {
+    return null;
+  }
+
+  // Simple deep clone so form edits never mutate props
+  return JSON.parse(JSON.stringify(site)) as SiteResponse;
+};
+
+const getErrorMessage = (error: unknown): string => {
+  if (error instanceof Error) {
+    return error.message;
+  }
+
+  if (typeof error === "object" && error && "message" in error) {
+    const maybeMessage = (error as { message?: unknown }).message;
+    if (typeof maybeMessage === "string") {
+      return maybeMessage;
+    }
+  }
+
+  return String(error);
+};
 
 export function AdminPanel({ tenantSlug, currentSite, onSuccess, onError }: AdminPanelProps) {
   const { t } = useTranslation();
@@ -26,16 +53,8 @@ export function AdminPanel({ tenantSlug, currentSite, onSuccess, onError }: Admi
     currentSite?.categories[0]?.id || ""
   );
 
-  // Hilfsfunktion: siteData nur aus currentSite laden (keine localStorage mehr!)
-  const getSiteData = (): SiteResponse | null => {
-    if (currentSite) {
-      return JSON.parse(JSON.stringify(currentSite));
-    }
-    return null;
-  };
-
-  // Memoized siteData - immer von currentSite
-  const siteData = useMemo(() => getSiteData(), [tenantSlug, currentSite]);
+  // Memoized siteData - clone currentSite to avoid accidental prop mutations
+  const siteData = useMemo(() => cloneSiteData(currentSite), [currentSite]);
 
   // Form zurücksetzen
   const resetDishForm = () => {
@@ -111,9 +130,9 @@ export function AdminPanel({ tenantSlug, currentSite, onSuccess, onError }: Admi
       
       // Seite neu laden, um Daten vom Backend zu holen
       setTimeout(() => window.location.reload(), 1000);
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error("Error saving dish:", err);
-      onError?.(err.message);
+      onError?.(getErrorMessage(err));
     } finally {
       setLoading(false);
     }
@@ -152,15 +171,16 @@ export function AdminPanel({ tenantSlug, currentSite, onSuccess, onError }: Admi
 
       onSuccess?.(`${dishName} ${t("admin.dishes.deletedSuccess")}!`);
       setTimeout(() => window.location.reload(), 1000);
-    } catch (err: any) {
-      onError?.(`${t("admin.dishes.error")}: ${err.message}`);
+    } catch (err: unknown) {
+      const message = getErrorMessage(err);
+      onError?.(`${t("admin.dishes.error")}: ${message}`);
     } finally {
       setLoading(false);
     }
   };
 
   // Gericht zum Bearbeiten laden
-  const handleEditDish = (dish: any) => {
+  const handleEditDish = (dish: MenuItem) => {
     setDishName(dish.name);
     setDishPrice(dish.price.toString());
     setDishDescription(dish.description || "");
@@ -224,9 +244,9 @@ export function AdminPanel({ tenantSlug, currentSite, onSuccess, onError }: Admi
 
       onSuccess?.(t("admin.hero.savedSuccess"));
       setTimeout(() => window.location.reload(), 1000);
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error("Error saving hero:", err);
-      onError?.(err.message);
+      onError?.(getErrorMessage(err));
     } finally {
       setLoading(false);
     }
@@ -290,9 +310,9 @@ export function AdminPanel({ tenantSlug, currentSite, onSuccess, onError }: Admi
 
       onSuccess?.(t("admin.colors.savedSuccess"));
       setTimeout(() => window.location.reload(), 1000);
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error("Error saving colors:", err);
-      onError?.(err.message);
+      onError?.(getErrorMessage(err));
     } finally {
       setLoading(false);
     }
@@ -333,9 +353,9 @@ export function AdminPanel({ tenantSlug, currentSite, onSuccess, onError }: Admi
 
       onSuccess?.(t("admin.layout.savedSuccess"));
       setTimeout(() => window.location.reload(), 1000);
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error("Error saving layout:", err);
-      onError?.(err.message);
+      onError?.(getErrorMessage(err));
     } finally {
       setLoading(false);
     }
@@ -379,9 +399,9 @@ export function AdminPanel({ tenantSlug, currentSite, onSuccess, onError }: Admi
 
       onSuccess?.(t("admin.heroImage.savedSuccess"));
       setTimeout(() => window.location.reload(), 1000);
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error("Error saving hero image:", err);
-      onError?.(err.message);
+      onError?.(getErrorMessage(err));
     } finally {
       setLoading(false);
     }
@@ -422,9 +442,9 @@ export function AdminPanel({ tenantSlug, currentSite, onSuccess, onError }: Admi
 
       onSuccess?.(t("admin.typography.savedSuccess"));
       setTimeout(() => window.location.reload(), 1000);
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error("Error saving typography:", err);
-      onError?.(err.message);
+      onError?.(getErrorMessage(err));
     } finally {
       setLoading(false);
     }
@@ -595,12 +615,12 @@ export function AdminPanel({ tenantSlug, currentSite, onSuccess, onError }: Admi
 
           <div className="dishes-container">
             <h3>{t("admin.dishes.title")}:</h3>
-            {siteData?.categories.map((cat) => (
+            {siteData?.categories.map((cat: MenuCategory) => (
               <div key={cat.id} className="category-section">
                 <h4>{cat.name}</h4>
                 {cat.items && cat.items.length > 0 ? (
                   <div className="dishes-grid">
-                    {cat.items.map((item: any) => (
+                    {cat.items.map((item: MenuItem) => (
                       <div key={item.id} className="dish-card">
                         {item.imageUrl ? (
                           <img

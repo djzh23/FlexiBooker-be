@@ -1,0 +1,20 @@
+# Solution / IDE artifacts
+.vs/
+*.suo
+*.user
+*.userosscache
+*.slnx
+
+# Node / frontend build output
+frontend/node_modules/
+frontend/dist/
+
+# Local environment overrides
+frontend/.env
+frontend/.env.local
+frontend/.env.*
+!frontend/.env.example
+
+# OS junk
+.DS_Store
+Thumbs.db

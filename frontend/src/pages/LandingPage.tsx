@@ -16,6 +16,15 @@ type ViewState =
   | { status: "error"; message: string; code?: number }
   | { status: "ready" };
 
+const getStatusCode = (error: unknown): number | undefined => {
+  if (typeof error === "object" && error && "status" in error) {
+    const status = (error as { status?: unknown }).status;
+    return typeof status === "number" ? status : undefined;
+  }
+
+  return undefined;
+};
+
 /**
  * LandingPage – Unified Frontend für Multi-Tenant Restaurants
  * 
@@ -68,9 +77,9 @@ export default function LandingPage() {
         applyTenantTheme(config);
 
         setState({ status: "ready" });
-      } catch (error: any) {
+      } catch (error: unknown) {
         console.error("[LandingPage] Error fetching site:", error);
-        const code = error?.status as number | undefined;
+        const code = getStatusCode(error);
 
         // Fallback: Zeige Demo-Seite mit Default-Config
         if (code === 404 || code === 400 || !code) {
@@ -89,7 +98,7 @@ export default function LandingPage() {
         }
       }
     })();
-  }, [tenantSlug]);
+  }, [tenantSlug, t]);
 
   // === LOADING STATE ===
   if (state.status === "loading") {
